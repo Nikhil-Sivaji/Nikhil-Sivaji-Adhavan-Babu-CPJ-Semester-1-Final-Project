@@ -1,0 +1,19 @@
+Flow Chart for Main Program:
+
+Introduce user
+
+1.Displays all the shops with their ratings
+
+2.Asks for Which shop to Join
+
+3.Collects the input and displays all the items in the shop
+
+4.Asks for Which item to add to the cart
+
+5.Adds item to cart
+
+6.Displays card
+
+7.Loop Back to step 3 till the user adds all 4 items or says no to continue adding more to the cart
+
+8. Says thank you and exits the program

@@ -1,76 +1,73 @@
+import java.sql.Array;
+import java.util.*;
+
 public class ShoppingCart
 {
 
-    private Item item1,item2,item3; //Note: Figure out  how to add more items
+    //private Item[] cartItems = new Item[15]; //Note: Figure out  how to add more items
+    private ArrayList<Item> cartItems = new ArrayList<Item>();// since it is a resizable array so I can push more products into the cart
+    private Item empty = new Item("Empty", "No Description", 0.0); // Created this to allow getTotal to work
     private double totalPrice;
 
     //Items, total price, toString
     //Note: Add Java Doc
     //Constructor
 
-    /**
-     * @param item1 the Shopping Cart's first item
-     * @param item2 the Shopping Cart's second item
-     * @param item3 the Shopping Cart's third item
+    /** Constructor for a Shopping. Has no parameters because it's always empty when first used
+     *
      */
-    public ShoppingCart(Item item1, Item item2, Item item3)
+    public ShoppingCart()
     {
-        this.item1 = item1;
-        this.item2 = item2;
-        this.item3 = item3;
-        this.totalPrice = item1.getItemPrice() + item2.getItemPrice() + item3.getItemPrice();
-
+        for(int i = 0; i < cartItems.size() - 1; i++) // "cartItems.size() - 1"
+        {
+            cartItems.set(1,empty);
+        }
+        totalPrice = 0;
     }
     //Mutator
 
     /**
      *
-     * @param item1
+     * @param index the index we want to change
+     * @param item the item we want to choose
      */
-    public void setItem1(Item item1)
+    public void setItem(int index, Item item)
     {
-        this.item1 = item1;
+            //Figure out how to push an item to the end of a list
+            cartItems.set(index,item);
+
+    }
+
+    /**
+     *
+     * @param item the item we want to append to the "cartItems" Array List
+     */
+    public void addItemToCart(Item item)
+    {
+       cartItems.add(item);
+
     }
 
 
-    public void setItem2(Item item2)
-    {
-        this.item2 = item2;
-    }
-
-    public void setItem3(Item item3)
-    {
-        this.item3 = item3;
-    }
-
+    //Accessor
+    /**
+     *
+     * @return the total cart price
+     */
     public double getTotalPrice()
     {
+        for(int i = 0; i < cartItems.size() - 1; i++)
+        {
+            totalPrice += cartItems.get(i).getItemPrice();
+        }
         return totalPrice;
     }
+
     //Accessor
 
-    /**
-     * @return returns a description which consists the name, price, and description of the first item
-     */
-    public String getItem1()
+    public String getCartItem(int index)
     {
-        return item1.toString();
-    }
-
-    /**
-     * @return returns a description which consists the name, price, and description of the second item
-     */
-    public String getItem2()
-    {
-        return item2.toString();
-    }
-
-    /**
-     * @return returns a description which consists the name, price, and description of the third item
-     */
-    public String getItem3()
-    {
-        return item3.toString();
+        return cartItems.get(index).toString();
     }
 
     /**
@@ -80,8 +77,14 @@ public class ShoppingCart
     public String toString()
     {
 
-        return "Shopping Cart" + "\n" + "    1." +  item1.toString("        ") + "    2." + item2.toString("        ") + "    3." + item3.toString("        ") + "\n" + "Total Price: " + totalPrice;
+        String s = "Shopping Cart:\n ";
 
+        for(int i = 0; i < cartItems.size(); i++)
+        {
+            s += cartItems.get(i).toString("      ") + "\n";
+
+        }
+        return s;
 
 
     }    

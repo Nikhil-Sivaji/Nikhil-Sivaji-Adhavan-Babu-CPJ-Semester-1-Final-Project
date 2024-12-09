@@ -1,7 +1,7 @@
 public class Shopping
 {
     //Constructor
-    private Item item1,item2, item3, item4;
+    private Item[] itemList;
     private String shopName;
     private String shopDescription;
     private double rating;
@@ -11,21 +11,22 @@ public class Shopping
      * @param shopName the Shop's name
      * @param shopDescription the Sho
      * @param rating the Shop's rating
-     * @param item1 the Shop's first item
-     * @param item2 the Shop's second item
-     * @param item3 the Shop's third item
-     * @param item4 the Shop's fourth item
+     * @param itemList the list of  Shop's items
      */
-    public Shopping(String shopName, String shopDescription, double rating, Item item1, Item item2, Item item3, Item item4)
+
+    // Array
+        // replace item 1 - 4 with an array
+            // we are going to change the getter and setter methods
+    //1 getter and 1 setter for items
+        //setitem(1, "value"); --> first parameter is x - 1 to get the index
+        // array[book,car] car --> value
+
+    public Shopping(String shopName, String shopDescription, double rating, Item[]itemList)
     {
         this.shopName = shopName;
         this.shopDescription = shopDescription;
         this.rating = rating;
-
-        this.item1 = item1;
-        this.item2 = item2;
-        this.item3 = item3;
-        this.item4 = item4;
+        this.itemList = itemList;
     }
     //Mutators
 
@@ -54,7 +55,35 @@ public class Shopping
         this.rating = rating;
     }
 
+    /**
+     *
+     * @param index the index of the item list
+     * @param item the item that is going to be replaced
+     */
+    public void setItem(int index,Item item)
+    {
+        itemList[index - 1] = item;
+    }
+
     //Accessors
+
+    /**
+     *
+     * @param index the index of the item that we need to access
+     * @return return the toString for the item
+     */
+    public String getItem(int index)
+    {
+        return itemList[index].toString();
+    }
+
+    public String getShopItemName(int index)
+    {
+
+        return itemList[index].getItemName();
+    }
+
+
 
     /** Method that returns the shops rating
      * @return returns shops rating
@@ -80,32 +109,16 @@ public class Shopping
         return shopDescription;
     }
 
-    /** Method that returns all of item1's info
-     * @return return's the items name, price, and description
-     */
-    public String getItem1() {
-        return item1.toString();
-    }
 
-    /** Method that returns all of item2's info
-     * @return return's the items name, price, and description
-     */
-    public String getItem2() {
-        return item2.toString();
-    }
+    public String listItems()
+    {
+        String s = "";//  stores the return statemtn
+        for(int i = 0; i < itemList.length; i++) {
+            s += itemList[i].toString() + "\n";
 
-    /** Method that returns all of item3's info
-     * @return return's the items name, price and description
-     */
-    public String getItem3() {
-        return item3.toString();
-    }
 
-    /** Method that returns all of item4's info
-     * @return return's the items name, price and description
-     */
-    public String getItem4() {
-        return item4.toString();
+        }
+        return s;
     }
 
     /** Method that formats and returns all of shop's info
@@ -115,6 +128,8 @@ public class Shopping
     {
         return getShopName() + ": " + getRating() +  " - " + getShopDescription();
     }
+
+
 
 
 
