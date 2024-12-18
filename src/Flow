@@ -1,4 +1,4 @@
-Flow Chart for Main Program:
+Flow Chart for MegaMart.Main Program:
 
 Introduce user
 
@@ -17,3 +17,7 @@ Introduce user
 7.Loop Back to step 3 till the user adds all 4 items or says no to continue adding more to the cart
 
 8. Says thank you and exits the program
+
+
+//Note: Create a method which will diplay all the Shops in the Shop Name list
+  //Document all code and finalize project

@@ -1,34 +1,35 @@
+package MegaMart;
+
+/**
+ * @summary the "Shopping Class" instantiates objects representing shops which hold an array list of items within their catalog
+ */
 public class Shopping
 {
-    //Constructor
+    //Instance variables and array list
     private Item[] itemList;
     private String shopName;
     private String shopDescription;
     private double rating;
-    // Notes: Figure out how to add infinite items
-        // Prob use an Array
-    /**
+
+
+
+    /** The constructor for the Shopping Class
      * @param shopName the Shop's name
      * @param shopDescription the Sho
      * @param rating the Shop's rating
      * @param itemList the list of  Shop's items
      */
-
-    // Array
-        // replace item 1 - 4 with an array
-            // we are going to change the getter and setter methods
-    //1 getter and 1 setter for items
-        //setitem(1, "value"); --> first parameter is x - 1 to get the index
-        // array[book,car] car --> value
-
     public Shopping(String shopName, String shopDescription, double rating, Item[]itemList)
     {
+
         this.shopName = shopName;
         this.shopDescription = shopDescription;
         this.rating = rating;
         this.itemList = itemList;
+
     }
-    //Mutators
+
+    //Mutator Methods
 
     /**
      *
@@ -36,7 +37,9 @@ public class Shopping
      */
     public void setShopName(String shopName)
     {
+
         this.shopName = shopName;
+
     }
 
     /**
@@ -44,7 +47,9 @@ public class Shopping
      */
     public void setShopDescription(String shopDescription)
     {
+
         this.shopDescription = shopDescription;
+
     }
 
     /**
@@ -52,7 +57,9 @@ public class Shopping
      */
     public void setRating(double rating)
     {
+
         this.rating = rating;
+
     }
 
     /**
@@ -62,35 +69,65 @@ public class Shopping
      */
     public void setItem(int index,Item item)
     {
+
         itemList[index - 1] = item;
+
     }
 
-    //Accessors
+    //Accessor
 
     /**
      *
      * @param index the index of the item that we need to access
      * @return return the toString for the item
      */
-    public String getItem(int index)
+    public String getItemInfo(int index)
     {
+
         return itemList[index].toString();
+
     }
 
+    /** Returns the item
+     * @param index the index of the item that we need to access
+     * @return the item's memory address
+     */
+    public Item getItem(int index)
+    {
+
+        return itemList[index];
+
+    }
+
+    /** Returns the name of the item
+     * @param index the index identifying an item from the Shop's arraylist
+     * @return the name of any the Shop's MegaMart.Item
+     */
     public String getShopItemName(int index)
     {
 
         return itemList[index].getItemName();
+
     }
 
+    /** Returns the length of the item list, which is the number of items
+     * @return the number of items
+     */
+    public int getNumberOfItems()
+    {
 
+        return itemList.length;
+
+    }
 
     /** Method that returns the shops rating
      * @return returns shops rating
      */
     public double getRating()
     {
+
         return rating;
+
     }
 
     /** Method that returns the shops name
@@ -98,7 +135,9 @@ public class Shopping
      */
     public String getShopName()
     {
+
         return shopName;
+
     }
 
     /** Method that returns the shops description
@@ -106,19 +145,27 @@ public class Shopping
      */
     public String getShopDescription()
     {
+
         return shopDescription;
+
     }
 
-
+    /** Formats and returns the list of items
+     * @return the items from the item's list
+     */
     public String listItems()
     {
-        String s = "";//  stores the return statemtn
+
+        String s = "________________________________________________________\n";//  stores the return statemtn
         for(int i = 0; i < itemList.length; i++) {
-            s += itemList[i].toString() + "\n";
+            s += (i+1) + ": " + itemList[i].toString() + "\n";
 
 
         }
+        s += "________________________________________________________\n";
+
         return s;
+
     }
 
     /** Method that formats and returns all of shop's info
@@ -126,7 +173,9 @@ public class Shopping
      */
     public String toString()
     {
+
         return getShopName() + ": " + getRating() +  " - " + getShopDescription();
+
     }
 
 
