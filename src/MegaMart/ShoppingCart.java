@@ -2,7 +2,7 @@ package MegaMart;
 import java.util.*;
 
 /**
- * the class "Shopping Cart" represents the virtual cart which stores the items bought or desired by the users.
+ * @summary "Shopping Cart" represents the virtual cart which stores the items bought or desired by the users.
  */
 public class ShoppingCart
 {
