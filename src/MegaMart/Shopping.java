@@ -31,8 +31,7 @@ public class Shopping
 
     //Mutator Methods
 
-    /**
-     *
+    /** Sets the shopName, name of the shop
      * @param shopName the name of the Shop
      */
     public void setShopName(String shopName)
@@ -42,7 +41,7 @@ public class Shopping
 
     }
 
-    /**
+    /** Sets the shopDescription, description of the shop
      * @param shopDescription the description of the Shop
      */
     public void setShopDescription(String shopDescription)
@@ -52,7 +51,7 @@ public class Shopping
 
     }
 
-    /**
+    /** Sets the rating, rating of the shop
      * @param rating the rating of the Shop
      */
     public void setRating(double rating)
@@ -62,8 +61,7 @@ public class Shopping
 
     }
 
-    /**
-     *
+    /** Replaces or adds an Item to the shop
      * @param index the index of the item list
      * @param item the item that is going to be replaced
      */
@@ -76,8 +74,7 @@ public class Shopping
 
     //Accessor
 
-    /**
-     *
+    /** Returns information about item, based on index entered
      * @param index the index of the item that we need to access
      * @return return the toString for the item
      */

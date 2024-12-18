@@ -26,10 +26,9 @@ public class ShoppingCart
         totalPrice = 0;
 
     }
-    //Mutator
+    //Mutator Methods
 
-    /**
-     *
+    /** Replaces or adds an Item to the shop
      * @param index the index we want to change
      * @param item the item we want to choose
      */
@@ -73,8 +72,7 @@ public class ShoppingCart
 
     }
 
-    /**
-     *
+    /** Formats and returns all the tiems in the shopping cart, total price
      * @return  returns attributes for the item's in the shopping cart as a formatted list
      */
     public String toString()

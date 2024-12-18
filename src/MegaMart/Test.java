@@ -1,3 +1,5 @@
+package MegaMart;
+
 public class Test
 {
 
@@ -10,9 +12,7 @@ public class Test
 
 
 
-        Shopping walmart = new Shopping("Walmart","Cheap and high quality goods",3.5,sponge,box,paper,fictionBook);
-        System.out.println(walmart.getItem2());
-        System.out.println(walmart.toString());
+
 
 
 
